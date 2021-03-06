@@ -1,4 +1,5 @@
 ---
+layout: index
 title: Market Mercury
 ---
 # Where do we stand?

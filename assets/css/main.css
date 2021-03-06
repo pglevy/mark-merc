@@ -1,0 +1,23 @@
+body {
+    background-color: #fafafa;
+}
+  
+  h1, h2 {
+    font-family: 'Work Sans', sans-serif;
+}
+  
+  .form-label {
+    display: block;
+    text-align: center;
+}
+  
+  .range-label {
+    margin-bottom: 2rem;
+}
+  
+  .assessment-category {
+    padding-top: 2rem;
+    text-align: center;
+  /*   border-top: 1px solid #e0e0e0; */
+}
+  

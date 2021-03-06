@@ -1,0 +1,5 @@
+---
+layout: survey
+title: Economy
+---
+
