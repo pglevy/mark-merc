@@ -1,0 +1,54 @@
+
+    {% include html-head.html %}
+
+    <div class="bg-primary bg-gradient">
+        <h1 class="py-3 text-center text-white">Credit</h1>
+      </div>
+    
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+      
+      <div class="px-5">
+      <label for="InterestRates" class="form-label fw-bold">Interest Rates</label>  
+      <input type="range" class="form-range" id="InterestRates" min="1" max="5" step="0.25">
+      <div class="d-flex justify-content-between range-label">
+        <div>High</div>
+        <div>Low</div>
+      </div>
+      </div>
+      
+      <div class="px-5">
+      <label for="Lending" class="form-label fw-bold">Lending</label>  
+      <input type="range" class="form-range" id="Lending" min="1" max="5" step="0.25">
+      <div class="d-flex justify-content-between range-label">
+        <div>Tight</div>
+        <div>Loose</div>
+      </div>
+      </div>
+      
+      <div class="px-5">
+      <label for="Terms" class="form-label fw-bold">Terms</label>  
+      <input type="range" class="form-range" id="Terms" min="1" max="5" step="0.25">
+      <div class="d-flex justify-content-between range-label">
+        <div>Demanding</div>
+        <div>Easy</div>
+      </div>
+      </div>
+          
+        <div class="row mt-5">
+            <div class="col-4">
+            <a id="previous" class="btn btn-outline-secondary bg-gradient text-uppercase d-block" href="economy.html">Previous</a>
+            </div>
+            <div class="col-8">
+            <a id="next" class="btn btn-primary bg-gradient text-uppercase d-block" href="markets.html">Next topic</a>
+        </div>
+      </div>
+          
+       {% include summary.html %}
+    
+        </div>
+      </div>
+    </div>
+       
+    {% include html-foot.html %}

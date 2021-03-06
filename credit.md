@@ -1,0 +1,4 @@
+---
+layout: credit
+title: Credit
+---

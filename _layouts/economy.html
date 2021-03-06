@@ -36,17 +36,16 @@
   </div>
   </div>
       
-  <div class="d-grid gap-2 mt-5">
-    <button id="show-summary" class="btn btn-primary bg-gradient text-uppercase" type="button">Show summary</button>
-  </div>
-      
-   <div id="summary" class="alert alert-info mt-3 alert-dismissible fade show" role="alert">
-     <h2>Summary</h2>
-     <p>Average: <span id="average">not ready</span><p>
-     <p>Temperature: <span id="temp">not ready</span>
-     <p>Stance: <span id="stance">not ready</span>
-     <button id="hide-summary" type="button" class="btn-close" aria-label="Close"></button>
-     </div>
+  <div class="row mt-5">
+    <div class="col-4">
+    <a id="previous" class="btn btn-outline-secondary bg-gradient text-uppercase d-block" href="index.html">Previous</a>
+    </div>
+    <div class="col-8">
+    <a id="next" class="btn btn-primary bg-gradient text-uppercase d-block" href="credit.html">Next topic</a>
+</div>
+</div>
+
+   {% include summary.html %}
 
     </div>
   </div>

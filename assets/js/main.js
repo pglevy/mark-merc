@@ -5,6 +5,15 @@ $( document ).ready(function() {
     var activity;
     var growth;
     var outlook;
+
+    var interest_rates;
+    var lending;
+    var terms;
+
+    var capital;
+    var trade_volume;
+    var spreads;
+
     var temp;
     var stance;
     
@@ -22,13 +31,28 @@ $( document ).ready(function() {
     
       outlook = window.localStorage.getItem('Outlook');
       $('#Outlook').val(outlook);
+
+      interest_rates = window.localStorage.getItem('InterestRates');
+      $('#InterestRates').val(interest_rates);
+    
+      lending = window.localStorage.getItem('Lending');
+      $('#Lending').val(lending);
+    
+      terms = window.localStorage.getItem('Terms');
+      $('#Terms').val(terms);
+
+      capital = window.localStorage.getItem('Capital');
+      $('#Capital').val(capital);
+
+      trade_volume = window.localStorage.getItem('TradeVolume');
+      $('#TradeVolume').val(trade_volume);
+
+      spreads = window.localStorage.getItem('Spreads');
+      $('#Spreads').val(spreads);
     }
     
     function calculateAverage() {
-      average = ((parseInt(activity) + parseInt(growth) + parseInt(outlook)) / 3).toPrecision(2);
-      console.log(activity);
-      console.log(growth);
-      console.log(outlook);
+      average = ((parseInt(activity) + parseInt(growth) + parseInt(outlook) + parseInt(interest_rates) + parseInt(lending) + parseInt(terms) + parseInt(capital) + parseInt(trade_volume) + parseInt(spreads)) / 9).toPrecision(2);
       console.log(average);
       return average;
     };
@@ -62,6 +86,7 @@ $( document ).ready(function() {
     });
     
     $('#show-summary').on('click', function() {
+      console.log("show summary clicked");
       $('#average').text(calculateAverage());
       $('#temp').text(calculateTemp());
       $('#stance').text(calculateStance());
