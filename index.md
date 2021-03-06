@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Market Mercury
+title: Home
 ---
 # Where do we stand?
 
