@@ -1,0 +1,84 @@
+- name: Activity
+  low: Sluggish
+  high: Vibrant
+  category: Economy
+
+- name: Growth
+  low: Slowing
+  high: Accelerating
+  category: Economy
+
+- name: Outlook
+  low: Bleak
+  high: Rosy
+  category: Economy
+
+- name: Interest Rates
+  low: High
+  high: Low
+  category: Credit
+
+- name: Lending
+  low: Tight
+  high: Loose
+  category: Credit
+
+- name: Terms
+  low: Demanding
+  high: Easy
+  category: Credit
+
+- name: Capital
+  low: Scarce
+  high: Abundant
+  category: Markets
+
+- name: Trade Volume
+  low: Low
+  high: High
+  category: Markets
+
+- name: Spreads
+  low: Wide
+  high: Narrow
+  category: Markets
+
+- name: Mood
+  low: Pessimistic
+  high: Optimistic
+  category: Investors
+
+- name: Behavior
+  low: Cautious
+  high: Aggressive
+  category: Investors
+
+- name: Buyers
+  low: Uninterested
+  high: Eager
+  category: Investors
+
+- name: Owners
+  low: Exiting
+  high: Holding
+  category: Investors
+
+- name: Recent Returns
+  low: Weak
+  high: Strong
+  category: Performance
+
+- name: Prices
+  low: Low
+  high: High
+  category: Performance
+
+- name: Prospective Returns
+  low: High
+  high: Low
+  category: Performance
+
+- name: Risk
+  low: Low
+  high: High
+  category: Performance

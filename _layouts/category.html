@@ -1,0 +1,44 @@
+
+    {% include html-head.html %}
+
+    {% assign cat = site.data.categories[page.category] %}
+    {% assign measures = site.data.measures | where: "category", cat.name %}
+    {% assign next = site.data.categories[page.next] %}
+    {% assign previous = site.data.categories[page.previous] %}
+    
+    <div class="bg-primary bg-gradient">
+      <h1 class="py-3 text-center text-white">{{ cat.name }}</h1>
+    </div>
+    
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+    
+          {% for item in measures %}
+          <div class="px-5">
+            <label for="{{ item.name | remove: " " }}" class="form-label fw-bold">{{ item.name }}</label>  
+            <input type="range" class="form-range" id="{{ item.name | remove: " " }}" min="1" max="5" step="0.25">
+            <div class="d-flex justify-content-between range-label">
+              <div>{{ item.low }}</div>
+              <div>{{ item.high }}</div>
+            </div>
+          </div>
+          {% endfor %}
+    
+          
+      <div class="row mt-5">
+        <div class="col-4">
+        <a id="previous" class="btn btn-outline-secondary bg-gradient text-uppercase d-block" href="{% if page.previous == "home" %}index{% else %}{{ previous.name | downcase }}{% endif %}.html">Previous</a>
+        </div>
+        <div class="col-8">
+        <a id="next" class="btn btn-primary bg-gradient text-uppercase d-block" href="{{ next.name | downcase }}.html">Next topic</a>
+    </div>
+    </div>
+    
+       {% include summary.html %}
+    
+        </div>
+      </div>
+    </div>
+       
+    {% include html-foot.html %}
