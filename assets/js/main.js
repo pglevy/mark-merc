@@ -1,59 +1,41 @@
+---
+---
 $( document ).ready(function() {
 
     // initialize
+    var sum;
     var average;
-    var activity;
-    var growth;
-    var outlook;
-
-    var interest_rates;
-    var lending;
-    var terms;
-
-    var capital;
-    var trade_volume;
-    var spreads;
-
     var temp;
     var stance;
-    
+
+    // create variables from measures.yml
+    {% for item in site.data.measures %}
+    var {{ item.name | remove: " " }};
+    //console.log("{{ item.name | remove: " " }}");
+    {% endfor %}
+
     $('#summary').hide();
     
     getItems();
     
     // functions
+    // get all the measures values from localStorage
     function getItems() {
-      activity = window.localStorage.getItem('Activity');
-      $('#Activity').val(activity);
-    
-      growth = window.localStorage.getItem('Growth');
-      $('#Growth').val(growth);
-    
-      outlook = window.localStorage.getItem('Outlook');
-      $('#Outlook').val(outlook);
-
-      interest_rates = window.localStorage.getItem('InterestRates');
-      $('#InterestRates').val(interest_rates);
-    
-      lending = window.localStorage.getItem('Lending');
-      $('#Lending').val(lending);
-    
-      terms = window.localStorage.getItem('Terms');
-      $('#Terms').val(terms);
-
-      capital = window.localStorage.getItem('Capital');
-      $('#Capital').val(capital);
-
-      trade_volume = window.localStorage.getItem('TradeVolume');
-      $('#TradeVolume').val(trade_volume);
-
-      spreads = window.localStorage.getItem('Spreads');
-      $('#Spreads').val(spreads);
+      {% for item in site.data.measures %}
+      {{ item.name | remove: " " }} = window.localStorage.getItem('{{ item.name | remove: " " }}');
+      $('#{{ item.name | remove: " " }}').val({{ item.name | remove: " " }});
+      {% endfor %}
     }
     
+    // calculate average from values in localStorage
     function calculateAverage() {
-      average = ((parseInt(activity) + parseInt(growth) + parseInt(outlook) + parseInt(interest_rates) + parseInt(lending) + parseInt(terms) + parseInt(capital) + parseInt(trade_volume) + parseInt(spreads)) / 9).toPrecision(2);
-      console.log(average);
+      sum = 0;
+      for (var i = 0; i < window.localStorage.length; i++){
+        sum = sum + parseInt((window.localStorage.getItem(localStorage.key(i))));
+      } 
+      console.log("sum: " + sum);
+      average = (sum / window.localStorage.length).toPrecision(2);
+      console.log("average: " + average);
       return average;
     };
     
