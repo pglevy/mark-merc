@@ -2,7 +2,7 @@
 
 <title>{{ site.title }}</title>
   </head>
-  <body>
+  <body id="summary-page">
     <div class="bg-primary bg-gradient">
         <div class="container">
             <div class="row justify-content-center">
@@ -17,13 +17,13 @@
             <div class="col-lg-6 fs-5">
                 <h1>{{ page.title }}</h1>
 
-                <div class="alert alert-warning" role="alert">
-                    <h2 class="alert-heading">Temperature: <span id="temp">Medium-High</span></h2>
+                <div id="temp-alert" class="alert" role="alert">
+                    <h2 class="alert-heading">Temperature: <span id="temp">not yet</span></h2>
                     <p>Based on our calculation of your responses, you see the temperature of the market as medium-high.</p>
                 </div>
 
                 <div class="alert alert-info" role="alert">
-                    <h2 class="alert-heading"><p>Stance: <span id="stance">Defensive</span></p></h2>
+                    <h2 class="alert-heading"><p>Stance: <span id="stance">not yet</span></p></h2>
                     <p>Because of this temperature reading, you may consider adjusting your portfolio toward a more defensive stance.</p>
                 </div>
 

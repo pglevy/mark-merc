@@ -7,6 +7,7 @@ $( document ).ready(function() {
     var average;
     var temp;
     var stance;
+    var alert;
 
     // create variables from measures.yml
     {% for item in site.data.measures %}
@@ -17,6 +18,13 @@ $( document ).ready(function() {
     $('#summary').hide();
     
     getItems();
+
+    
+
+    $('#average').text(calculateAverage());
+    $('#temp').text(calculateTemp());
+    $('#stance').text(calculateStance());
+    setAlertColor();
     
     // functions
     // get all the measures values from localStorage
@@ -49,10 +57,18 @@ $( document ).ready(function() {
     
     function calculateStance() {
       if (average >= 3) {
+        alert = "alert-warning";
         return "Defense";
       } else {
+        alert = "alert-success";
         return "Offense";
       }
+    };
+
+    function setAlertColor() {
+      $('#temp-alert').removeClass('alert-info');
+      $('#temp-alert').addClass(alert);
+      console.log("alert color is " + alert);
     };
     
     // listeners
@@ -72,7 +88,7 @@ $( document ).ready(function() {
       $('#average').text(calculateAverage());
       $('#temp').text(calculateTemp());
       $('#stance').text(calculateStance());
-      $('#summary').show();
+      //$('#summary').show();
     });
     
     $('#hide-summary').on('click', function() {
