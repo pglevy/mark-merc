@@ -31,7 +31,7 @@
         <a id="previous" class="btn btn-outline-secondary bg-gradient text-uppercase d-block" href="{% if page.previous == "home" %}index{% else %}{{ previous.name | downcase }}{% endif %}.html">Previous</a>
         </div>
         <div class="col-8">
-        <a id="next" class="btn btn-primary bg-gradient text-uppercase d-block" href="{{ next.name | downcase }}.html">Next topic</a>
+        <a id="next" class="btn btn-primary bg-gradient text-uppercase d-block" href="{%if page.title == "Performance" %}summary{% else %}{{ next.name | downcase }}{% endif %}.html">Next topic</a>
     </div>
     </div>
     
